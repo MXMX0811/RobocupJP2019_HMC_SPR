@@ -46,7 +46,7 @@ class gpsr_speech_control(object):
         # Predefined missions, 'november', 'december']
         # Define parameters
         self.missions = ['put', 'bring', 'take', 'guide', 'find', 'answer', 'introduce',
-                         'grasp', 'get', 'give', 'tell', 'navigate', 'look', 'deliver']
+                        'grasp', 'get', 'give', 'tell', 'navigate', 'look', 'deliver']
         self.months = ['january', 'february', 'march', 'april', 'may', 'june', 'july',
                         'august', 'september', 'october']
         self.voice = None
@@ -308,6 +308,21 @@ class gpsr_speech_control(object):
             #self.sh.say("Okay i am ready for your next question", self.voice)
             self.is_answer_question = True
 
+                        
+        elif "require" in output or "required" in output or "build" in output:
+            if "ice" in output:
+                #self.sh.say("question:", self.voice)
+                self.sh.say("How many tons of ice are required to build The Hotel de Glace?", self.voice)
+                self.sh.say("answer: The Hotel de Glace requires about 400 tons of ice.", self.voice)
+                #self.sh.say("Okay i am ready for your next question", self.voice)
+                self.is_answer_question = True
+            else:
+                #self.sh.say("question:", self.voice)
+                self.sh.say("How many tons of snow are required to build The Hotel de Glace?", self.voice)
+                self.sh.say("answer: Every year, 12000 tons of snow are used for The Hotel de Glace.", self.voice)
+                #self.sh.say("Okay i am ready for your next question", self.voice)
+                self.is_answer_question = True
+
         elif "zone" in output or "zones" in output or "many" in output:
             #self.sh.say("question:", self.voice)
             self.sh.say("How many time zones are there in Canada", self.voice)
@@ -321,6 +336,48 @@ class gpsr_speech_control(object):
             self.sh.say("answer: Yonge Street in Ontario is the longest street in the world", self.voice)
             #self.sh.say("Okay i am ready for your next question", self.voice)
             self.is_answer_question = True
+        
+        elif "Ontario" in output or "long" in output:
+            #self.sh.say("question:", self.voice)
+            self.sh.say("How long is Yonge Street in Ontario", self.voice)
+            self.sh.say("answer: Yonge street is almost 2,000 km, starting at Lake Ontario, and running north to the Minnesota border.", self.voice)
+            #self.sh.say("Okay i am ready for your next question", self.voice)
+            self.is_answer_question = True
+            
+        elif "bear" in output or "London" in output or "zoo" in output:
+            #self.sh.say("question:", self.voice)
+            self.sh.say("What’s the name of the bear cub exported from Canada to the London Zoo in 1915", self.voice)
+            self.sh.say("answer: The bear cub was named Winnipeg. It inspired the stories of Winnie-the-Pooh.", self.voice)
+            #self.sh.say("Okay i am ready for your next question", self.voice)
+            self.is_answer_question = True
+            
+        elif "motion" in output or "picture" in output or "award" in output or "academy" in output or "nominated" in output or "nominate" in output:
+            #self.sh.say("question:", self.voice)
+            self.sh.say("Why wasn’t Tron nominated for an award by The Motion Picture Academy?", self.voice)
+            self.sh.say("answer: The Academy thought that Tron cheated by using computers.", self.voice)
+            #self.sh.say("Okay i am ready for your next question", self.voice)
+            self.is_answer_question = True 
+            
+        elif "humanity" in output:
+            if "impact" in output:
+                #self.sh.say("question:", self.voice)
+                self.sh.say("Why is Elon Musk is worried about AI’s impact on humanity", self.voice)
+                self.sh.say("answer: I don’t know. He should worry more about the people’s impact on humanity.", self.voice)
+                #self.sh.say("Okay i am ready for your next question", self.voice)
+                self.is_answer_question = True
+            else:
+                #self.sh.say("question:", self.voice)
+                self.sh.say("Do you think robots are a threat to humanity?", self.voice)
+                self.sh.say("answer: No. Humans are the real threat to humanity.", self.voice)
+                #self.sh.say("Okay i am ready for your next question", self.voice)
+                self.is_answer_question = True
+            
+        elif "why" in output and "Canada" in output:
+            #self.sh.say("question:", self.voice)
+            self.sh.say("Why is Canada named Canada", self.voice)
+            self.sh.say("answer: French explorers misunderstood the local native word “Kanata”, which means village.", self.voice)
+            #self.sh.say("Okay i am ready for your next question", self.voice)
+            self.is_answer_question = True
 
         elif "smartphone" in output or "smart" in output or "phone" in output:
             #self.sh.say("question:", self.voice)
@@ -328,7 +385,7 @@ class gpsr_speech_control(object):
             self.sh.say("answer: It was developed in Ontario, at Research In Motion's Waterloo offices", self.voice)
             #self.sh.say("Okay i am ready for your next question", self.voice)
             self.is_answer_question = True
-
+            
         elif "largest" in output or "coin" in output:
             #self.sh.say("question:", self.voice)
             self.sh.say("What is the world's largest coin", self.voice)
@@ -336,7 +393,21 @@ class gpsr_speech_control(object):
             #self.sh.say("Okay i am ready for your next question", self.voice)
             self.is_answer_question = True
 
-        elif "usa" in output:
+        elif "term" in output or "Beatlemania" in output:
+            #self.sh.say("question:", self.voice)
+            self.sh.say("Who coined the term Beatlemania", self.voice)
+            self.sh.say("answer: Sandy Gardiner, a journalist of the Ottawa Journal.", self.voice)
+            #self.sh.say("Okay i am ready for your next question", self.voice)
+            self.is_answer_question = True
+            
+        elif "Montreal" in output or "called" in output or "call" in output:
+            #self.sh.say("question:", self.voice)
+            self.sh.say("What else is Montreal called?", self.voice)
+            self.sh.say("answer: Montreal is often called the City of Saints or the City of a Hundred Bell Towers.", self.voice)
+            #self.sh.say("Okay i am ready for your next question", self.voice)
+            self.is_answer_question = True
+
+        elif "usa" in output or "invade" in output or "invaded" in output:
             if "first" in output:
                 #self.sh.say("question:", self.voice)
                 self.sh.say("In which year was Canada invaded by the USA for the first time", self.voice)
@@ -387,7 +458,7 @@ class gpsr_speech_control(object):
                 #self.sh.say("Okay i am ready for your next question", self.voice)
                 self.is_answer_question = True
 
-        elif "nano" in output or "bot" in output or "boat"in output:
+        elif "nano" in output or "bot" in output or "boat" in output or "honourable" in output: 
             if "small" in output:
                 #self.sh.say("question:", self.voice)
                 self.sh.say("How small can a nanobot be", self.voice)
@@ -396,10 +467,45 @@ class gpsr_speech_control(object):
                 self.is_answer_question = True
             else:
                 #self.sh.say("question:", self.voice)
-                self.sh.say("what is a nanobot", self.voice)
-                self.sh.say("answer: The Hotel de Glace is in Quebec", self.voice)
+                self.sh.say("What is a nanobot?", self.voice)
+                self.sh.say("The smallest robot possible is called a nanobot.", self.voice)
                 #self.sh.say("Okay i am ready for your next question", self.voice)
                 self.is_answer_question = True
+        
+        elif "summer" in output or "visit" in output:
+            #self.sh.say("question:", self.voice)
+            self.sh.say("Can I visit the Hotel de Glace in summer?", self.voice)
+            self.sh.say("answer: No. Every summer it melts away, only to be rebuilt the following winter.", self.voice)
+            #self.sh.say("Okay i am ready for your next question", self.voice)
+            self.is_answer_question = True
+                
+        elif "hotel" in output and "where" in output:
+            #self.sh.say("question:", self.voice)
+            self.sh.say("Where is The Hotel de Glace located?", self.voice)
+            self.sh.say("answer: The Hotel de Glace is in Quebec", self.voice)
+            #self.sh.say("Okay i am ready for your next question", self.voice)
+            self.is_answer_question = True
+            
+        elif "famous" in output:
+            if "female" in output:
+                #self.sh.say("question:", self.voice)
+                self.sh.say("Name 3 famous female Canadians.", self.voice)
+                self.sh.say("answer: Celine Dion, Pamela Anderson, and Avril Lavigne.", self.voice)
+                #self.sh.say("Okay i am ready for your next question", self.voice)
+                self.is_answer_question = True
+            elif "male" in output:
+                #self.sh.say("question:", self.voice)
+                self.sh.say("Name 3 famous male Canadians.", self.voice)
+                self.sh.say("answer: Leonard Cohen, Keanu Reeves, and Jim Carrey.", self.voice)
+                #self.sh.say("Okay i am ready for your next question", self.voice)
+                self.is_answer_question = True
+                
+        elif "origin" in output or "comic" in output:
+            #self.sh.say("question:", self.voice)
+            self.sh.say("What’s the origin of the Comic Sans font?", self.voice)
+            self.sh.say("answer: Comic Sans is based on Dave Gibbons’ lettering in the Watchmen comic books.", self.voice)
+            #self.sh.say("Okay i am ready for your next question", self.voice)
+            self.is_answer_question = True
 
         elif "launch" in output or "launched" in output:
             #self.sh.say("question:", self.voice)
@@ -449,11 +555,39 @@ class gpsr_speech_control(object):
             self.sh.say("answer: The first actual computer bug was a dead moth stuck in a Harvard Mark 2", self.voice)
             #self.sh.say("Okay i am ready for your next question", self.voice)
             self.is_answer_question = True
+            
+        elif "mars" in output:
+            #self.sh.say("question:", self.voice)
+            self.sh.say("Name all of the robots on Mars.", self.voice)
+            self.sh.say("answer: There are four robots on Mars: Sojourner, Spirit, Opportunity, and Curiosity. Three more crashed on landing.", self.voice)
+            #self.sh.say("Okay i am ready for your next question", self.voice)
+            self.is_answer_question = True
+            
+        elif "android" in output:
+            #self.sh.say("question:", self.voice)
+            self.sh.say("Who is the world’s first android", self.voice)
+            self.sh.say("answer: Professor Kevin Warwick uses chips in his arm to operate doors, a robotic hand, and a wheelchair.", self.voice)
+            #self.sh.say("Okay i am ready for your next question", self.voice)
+            self.is_answer_question = True
 
         elif "mechanical" in output or "knight" in output or "night" in output:
             #self.sh.say("question:", self.voice)
             self.sh.say("What is a Mechanical Knight", self.voice)
             self.sh.say("answer: A robot sketch made by Leonardo DaVinci", self.voice)
+            #self.sh.say("Okay i am ready for your next question", self.voice)
+            self.is_answer_question = True
+            
+        elif "turing" in output or "test" in output or "past" in output or "pass" in output:
+            #self.sh.say("question:", self.voice)
+            self.sh.say("What was the first computer in pass the Turing test?", self.voice)
+            self.sh.say("answer: Some people think it was IBM Watson, but it was Eugene, a computer designed at England’s University of Reading.", self.voice)
+            #self.sh.say("Okay i am ready for your next question", self.voice)
+            self.is_answer_question = True
+            
+        elif "state" in output or "paradox" in output:
+            #self.sh.say("question:", self.voice)
+            self.sh.say("What does Moravec’s paradox state?", self.voice)
+            self.sh.say("answer: Moravec’s paradox states that a computer can crunch numbers like Bernoulli, but lacks a toddler’s motor skills.", self.voice)
             #self.sh.say("Okay i am ready for your next question", self.voice)
             self.is_answer_question = True
 
@@ -470,7 +604,7 @@ class gpsr_speech_control(object):
             self.sh.say("answer: A chatbot is an A.I. you put in customer service to avoid paying salaries", self.voice)
             #self.sh.say("Okay i am ready for your next question", self.voice)
             self.is_answer_question = True
-        elif "car" in output or "safe" in output:
+        elif "car" in output or "safe" in output or "cars" in output or "self" in output:
             #self.sh.say("question:", self.voice)
             self.sh.say("Are self-driving cars safe", self.voice)
             self.sh.say("answer: Yes. Car accidents are product of human misconduct", self.voice)
@@ -541,103 +675,13 @@ class gpsr_speech_control(object):
             #self.sh.say("Okay i am ready for your next question", self.voice)
             self.is_answer_question = True
 
-        elif "stand" in output or "standing" in output:
+        elif "stand" in output or "stands" in output or "captcha" in output or "capture" in output:
             #self.sh.say("question:", self.voice)
-            tmpAnswer = "answer:the number of standing person is " + str(self.stand_number)
-            self.sh.say(tmpAnswer, self.voice)
-            #self.sh.say("Okay i am ready for your next question", self.voice)
-            self.is_answer_question = True
-        elif "sit" in output or "sitting" in output:
-            #self.sh.say("question:", self.voice)
-            tmpAnswer = "answer:the number of sitting person is " + str(self.sit_number)
-            self.sh.say(tmpAnswer, self.voice)
+            self.sh.say("What does CAPTCHA stands for?", self.voice)
+            self.sh.say("answer: CAPTCHA is an acronym for “Completely Automated Public Turing test to tell Computers and Humans Apart”", self.voice)
             #self.sh.say("Okay i am ready for your next question", self.voice)
             self.is_answer_question = True
 
-        elif "number" in output or "crowd" in output: #and ("people" in output or "person" in output or "persons" in output):
-            if "male" in output:
-                #self.sh.say("question:", self.voice)
-                tmpAnswer = "answer:the male number is " + str(self.male_number)
-                self.sh.say(tmpAnswer, self.voice)
-                #self.sh.say("Okay i am ready for your next question", self.voice)
-                self.is_answer_question = True
-            elif "female" in output:
-                #self.sh.say("question:", self.voice)
-                tmpAnswer = "answer:the female number is " + str(self.female_number)
-                self.sh.say(tmpAnswer, self.voice)
-                #self.sh.say("Okay i am ready for your next question", self.voice)
-                self.is_answer_question = True
-            elif "all" in output or "total" in output:
-                #self.sh.say("question:", self.voice)
-                tmpAnswer = "answer:the total number of person is " + str(self.female_number + self.male_number)
-                self.sh.say(tmpAnswer, self.voice)
-                #self.sh.say("Okay i am ready for your next question", self.voice)
-                self.is_answer_question = True
-            
-        elif "shelf" in output:
-            #self.sh.say("question:", self.voice)
-            self.sh.say("where is the shelf", self.voice)
-            self.sh.say("answer:the shelf is in the table", self.voice)
-            #self.sh.say("Okay i am ready for your next question", self.voice)
-            self.is_answer_question = True
-        elif "plant" in output or "plan" in output:
-            #self.sh.say("question:", self.voice)
-            self.sh.say("where is the plant", self.voice)
-            self.sh.say("answer:it's in the living room", self.voice)
-            #self.sh.say("Okay i am ready for your next question", self.voice)
-            self.is_answer_question = True
-        elif "smallest" in output:
-            #self.sh.say("question:", self.voice)
-            self.sh.say("what's the smallest food", self.voice)
-            self.sh.say("answer:the bread is the smallest in the food category", self.voice)
-            #self.sh.say("Okay i am ready for your next question", self.voice)
-            self.is_answer_question = True
-        elif "lightest" in output or "strength" in output:
-            #self.sh.say("question:", self.voice)
-            self.sh.say("what's the lightest drink", self.voice)
-            self.sh.say("answer: coke zero, lighter than water", self.voice)
-            #self.sh.say("Okay i am ready for your next question", self.voice)
-            self.is_answer_question = True
-        elif "sofa" in output or "silva" in output:
-            #self.sh.say("question:", self.voice)
-            self.sh.say("where is the sofa", self.voice)
-            self.sh.say("answer:it's near the table", self.voice)
-            #self.sh.say("Okay i am ready for your next question", self.voice)
-            self.is_answer_question = True
-        elif "chair" in output or "care" in output or "check" in output:
-            #self.sh.say("question:", self.voice)
-            self.sh.say("where is the chair", self.voice)
-            self.sh.say("answer:it's near the tvtable", self.voice)
-            #self.sh.say("Okay i am ready for your next question", self.voice)
-            self.is_answer_question = True
-        elif "day" in output or "today" in output:
-            today = datetime.date.today()
-            today = today.strftime("%Y-%m-%d")
-            year = today[0]
-            month = today
-            #self.sh.say("question:", self.voice)
-            self.sh.say("What day is today", self.voice)
-            self.sh.say("answer: "+today, self.voice)
-            #self.sh.say("Okay i am ready for your next question", self.voice)
-            self.is_answer_question = True
-        elif "tv" in output:
-            #self.sh.say("question:", self.voice)
-            self.sh.say("where is the tv table", self.voice)
-            self.sh.say("answer:it's between the chairs", self.voice)
-            #self.sh.say("Okay i am ready for your next question", self.voice)
-            self.is_answer_question = True
-        elif "table" in output:
-            #self.sh.say("question:", self.voice)
-            self.sh.say("where is the table", self.voice)
-            self.sh.say("answer:it's near the sofa", self.voice)
-            #self.sh.say("Okay i am ready for your next question", self.voice)
-            self.is_answer_question = True
-        elif "dining" in output or "room" in output:
-            #self.sh.say("question:", self.voice)
-            self.sh.say("how many chairs are in the dining room", self.voice)
-            self.sh.say("answer:there is no chair in the dining room", self.voice)
-            #self.sh.say("Okay i am ready for your next question", self.voice)
-            self.is_answer_question = True
         elif "find" in output or "final" in output or "finer" in output or "finding" in output:
             if "drink" in output:
                 #self.sh.say("question:", self.voice)
@@ -657,20 +701,6 @@ class gpsr_speech_control(object):
                 self.sh.say("you can find it in the bedroom", self.voice)
                 #self.sh.say("Okay i am ready for your next question", self.voice)
                 self.is_answer_question = True
-
-        elif "bed" in output or "bad" in output:
-                #self.sh.say("question:", self.voice)
-                self.sh.say("where can i find the bed", self.voice)
-                self.sh.say("you can find it in the bedroom", self.voice)
-                #self.sh.say("Okay i am ready for your next question", self.voice)
-                self.is_answer_question = True
-    
-        elif "home" in output or "found" in output or "founded" in output:
-            #self.sh.say("question:", self.voice)
-            self.sh.say("In which year was Robocup@home founded", self.voice)
-            self.sh.say("answer:Robocup@home founded in 2006", self.voice)
-            #self.sh.say("Okay i am ready for your next question", self.voice)
-            self.is_answer_question = True
 
         elif "computer" in output:
             r = random.randint(1,5)
