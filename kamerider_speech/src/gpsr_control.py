@@ -330,17 +330,17 @@ class gpsr_speech_control(object):
             #self.sh.say("Okay i am ready for your next question", self.voice)
             self.is_answer_question = True
 
+        elif "ontario" in output or "long" in output:
+            #self.sh.say("question:", self.voice)
+            self.sh.say("How long is Yonge Street in Ontario", self.voice)
+            self.sh.say("answer: Yonge street is almost 2,000 km, starting at Lake Ontario, and running north to the Minnesota border.", self.voice)
+            #self.sh.say("Okay i am ready for your next question", self.voice)
+            self.is_answer_question = True
+
         elif "longest" in output or "street" in output or "straight" in output:
             #self.sh.say("question:", self.voice)
             self.sh.say("What's the longest street in the world", self.voice)
             self.sh.say("answer: Yonge Street in Ontario is the longest street in the world", self.voice)
-            #self.sh.say("Okay i am ready for your next question", self.voice)
-            self.is_answer_question = True
-        
-        elif "Ontario" in output or "long" in output:
-            #self.sh.say("question:", self.voice)
-            self.sh.say("How long is Yonge Street in Ontario", self.voice)
-            self.sh.say("answer: Yonge street is almost 2,000 km, starting at Lake Ontario, and running north to the Minnesota border.", self.voice)
             #self.sh.say("Okay i am ready for your next question", self.voice)
             self.is_answer_question = True
             
@@ -359,7 +359,7 @@ class gpsr_speech_control(object):
             self.is_answer_question = True 
             
         elif "humanity" in output:
-            if "impact" in output:
+            if "impact" in output or "elon" in output or "why" in output:
                 #self.sh.say("question:", self.voice)
                 self.sh.say("Why is Elon Musk is worried about AI’s impact on humanity", self.voice)
                 self.sh.say("answer: I don’t know. He should worry more about the people’s impact on humanity.", self.voice)
@@ -372,7 +372,7 @@ class gpsr_speech_control(object):
                 #self.sh.say("Okay i am ready for your next question", self.voice)
                 self.is_answer_question = True
             
-        elif "why" in output and "Canada" in output:
+        elif ("why" in output or "named" in output) and "canada" in output:
             #self.sh.say("question:", self.voice)
             self.sh.say("Why is Canada named Canada", self.voice)
             self.sh.say("answer: French explorers misunderstood the local native word “Kanata”, which means village.", self.voice)
@@ -458,7 +458,7 @@ class gpsr_speech_control(object):
                 #self.sh.say("Okay i am ready for your next question", self.voice)
                 self.is_answer_question = True
 
-        elif "nano" in output or "bot" in output or "boat" in output or "honourable" in output: 
+        elif "nano" in output or "bot" in output or "boat" in output or "honourable" in output or "nobel" in output: 
             if "small" in output:
                 #self.sh.say("question:", self.voice)
                 self.sh.say("How small can a nanobot be", self.voice)
